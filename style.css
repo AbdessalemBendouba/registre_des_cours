@@ -10,6 +10,16 @@
 	transition: all .25s;
 }
 
+body.light{
+    color: black;
+    background: white;
+}
+
+body.dark{
+    color: white;
+    background: #202020;
+}
+
 h1{
     font-weight: 900;
     font-size: 2.5rem;
@@ -34,8 +44,9 @@ header{
     text-align: center;
     gap:2rem;
     padding: 0 1rem;
+    box-shadow: 0 0 20px 0px black;
+    background: linear-gradient(135deg, hsl(120deg 100% 50% / 25%), hsl(207deg 100% 50% / 25%));
 }
-
 .CourseIndex{
     width: 100vw;
     min-height: 100vh;
