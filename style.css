@@ -10,6 +10,10 @@
 	transition: all .25s;
 }
 
+
+/*preparing*/
+
+
 body{
     width:100vw;
 }
@@ -41,32 +45,6 @@ button{
     border: 0;
     background: transparent;
     cursor: pointer;
-}
-
-body.light{
-    color: black;
-    background: white;
-}
-
-body.light button{
-    color: white;
-}
-
-body.light nav{
-    background: hsla(0, 0%, 100%, 0.5);
-}
-
-body.dark nav{
-    background: hsla(0, 0%, 13%, 0.5);
-}
-
-body.dark button{
-    color: rgb(0, 0, 0);
-}
-
-body.dark{
-    color: white;
-    background: #202020;
 }
 
 h1{
@@ -103,4 +81,34 @@ header h1, header h3, header p{
 .CourseIndex{
     width: 100%;
     min-height: 100vh;
+}
+
+
+/* light-dark */
+
+
+body.light{
+    color: black;
+    background: white;
+}
+
+body.light button{
+    color: white;
+}
+
+body.light nav{
+    background: hsla(0, 0%, 100%, 0.5);
+}
+
+body.dark nav{
+    background: hsla(0, 0%, 13%, 0.5);
+}
+
+body.dark button{
+    color: rgb(0, 0, 0);
+}
+
+body.dark{
+    color: white;
+    background: #202020;
 }
