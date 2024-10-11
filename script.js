@@ -25,7 +25,9 @@ async function getPdfPaths() {
 
 // pdf viewer
 
-
+function basename(path) {
+    return path.split('/').pop();
+}
 
 function showPaths(pdfData) {
     const CList = document.getElementById('CoursesList');
@@ -43,13 +45,13 @@ function showPaths(pdfData) {
             
             listItem.appendChild(link);
             
-            if (folder === 'td') {
+            if (folder.toLowerCase() === 'td') {
                 listItem.className = 'pdf-link td';
                 TList.appendChild(listItem);
-            } else if (folder === 'courses') {
+            } else if (folder.toLowerCase() === 'courses') {
                 listItem.className = 'pdf-link courses';
                 CList.appendChild(listItem);
-            }
+            } 
         }
     }
 }
