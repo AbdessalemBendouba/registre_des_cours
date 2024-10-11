@@ -21,7 +21,6 @@ nav{
     align-items: center;
     text-align: center;
     gap:2rem;
-    padding: 0 1rem;
     box-shadow: 0 0 .25rem 0 black; 
     backdrop-filter: blur(.25rem);
     position: fixed;
@@ -31,6 +30,10 @@ nav{
     height: 5rem;
     font-size: 1rem;
     font-weight: 500;
+}
+
+nav button, nav span{
+    margin: 0 1rem;
 }
 
 button{
