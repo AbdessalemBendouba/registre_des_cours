@@ -88,7 +88,7 @@ body.light{
     background: white;
 }
 
-body.light button{
+body.light button, a{
     color: black;
 }
 
@@ -100,7 +100,7 @@ body.dark nav{
     background: hsla(0, 0%, 13%, 0.5);
 }
 
-body.dark button{
+body.dark button, a{
     color: white;
 }
 
@@ -108,3 +108,5 @@ body.dark{
     color: white;
     background: #202020;
 }
+
+
