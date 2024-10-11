@@ -13,17 +13,15 @@ function toggletheme(){
 
 async function getPdfPaths() {
     try {
-      const response = await fetch('filefinder.php');
-      const txtdata = await response.text();
-      const data = await JSON.parse(txtdata);
+      const response = await fetch('pdf_paths.json');
+      const data = await response.json();
       console.log(data);
-      // Access PDF paths from the data object
       return data;
     } catch (error) {
       console.error('Error fetching PDF data:', error);
       return [];
     }
-  }
+}
 
 // pdf viewer
 
