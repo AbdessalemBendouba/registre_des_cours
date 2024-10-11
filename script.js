@@ -25,33 +25,40 @@ async function getPdfPaths() {
 
 // pdf viewer
 
+
+
 function showPaths(pdfData) {
     const CList = document.getElementById('CoursesList');
     const TList = document.getElementById('TDList');
-        for (const folder in pdfData) {
-            for (const filePath of pdfData[folder]) {
-                const fileName = basename(filePath);
-                const listItem = document.createElement('li');
-                
-                // Set color based on folder
-                if (folder === 'td') {
-                    listItem.className = 'pdf-link td';
-                } else if (folder === 'courses') {
-                    listItem.className = 'pdf-link courses';
-                }
-
-                const link = document.createElement('a');
-                link.href = filePath;
-                link.textContent = fileName;
+    
+    for (const folder in pdfData) {
+        for (const filePath of pdfData[folder]) {
+            const fileName = basename(filePath);
+            const listItem = document.createElement('li');
             
-                listItem.appendChild(link);
-
-                if (folder === 'td') {
-                    TList.appendChild(listItem);
-                } else if (folder === 'courses') {
-                    CList.appendChild(listItem);
-                }
-  
+            
+            const link = document.createElement('a');
+            link.href = filePath;
+            link.textContent = fileName;
+            
+            listItem.appendChild(link);
+            
+            if (folder === 'td') {
+                listItem.className = 'pdf-link td';
+                TList.appendChild(listItem);
+            } else if (folder === 'courses') {
+                listItem.className = 'pdf-link courses';
+                CList.appendChild(listItem);
             }
         }
     }
+}
+  
+// Call the functions 
+getPdfPaths()
+    .then(pdfData => {
+        showPaths(pdfData);
+    })
+    .catch(error => {
+        console.error('Error fetching PDF data:', error);
+});
