@@ -9,3 +9,9 @@ function toggletheme(){
         body.classList.add('light');
     }
 }
+
+function getFilesFromServer(){
+    var fs = require('fs');
+    var courses_files = fs.readdirSync('/pdf/courses');
+    var TD_files = fs.readdirSync('/pdf/TD');
+}
