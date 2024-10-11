@@ -10,8 +10,11 @@
 	transition: all .25s;
 }
 
+body{
+    width:100vw;
+}
 nav{
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -20,6 +23,7 @@ nav{
     gap:2rem;
     padding: 0 1rem;
     box-shadow: 0 0 .25rem 0 black; 
+    backdrop-filter: blur(.25rem);
     position: fixed;
     top: 0;
     left: 0;
