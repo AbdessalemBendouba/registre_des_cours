@@ -10,6 +10,28 @@
 	transition: all .25s;
 }
 
+nav{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap:2rem;
+    padding: 0 1rem;
+    box-shadow: 0 0 20px 0px black; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+button{
+    border: 0 ;
+    background: 0;
+
+}
+
 body.light{
     color: black;
     background: white;
