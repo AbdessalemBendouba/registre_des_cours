@@ -74,12 +74,12 @@ header h1, header h3, header p{
     margin: 0 1rem;
 }
 
-.CourseIndex{
+.RegisterIndex{
     width: 100%;
     min-height: 100vh;
 }
 
-.CourseIndex h1{
+.RegisterIndex h1{
     padding: 2rem 0;
 }
 
@@ -87,11 +87,11 @@ a{
     text-decoration: none;
 }
 
-.cours{
+.Coursesindex{
     background: hsla(15, 100%, 50%, 0.25);
 }
 
-.td{
+.TDIndex{
     background:hsl(210, 100%, 25%, 0.25)
 }
 
@@ -99,23 +99,23 @@ h2{
     margin-left: 5rem;
 }
 
-.CourseIndex ul {
+.RegisterIndex ul {
     list-style-type: none;
     padding: 0 4rem;
 }
 
-.CourseIndex li{
+.RegisterIndex li{
     width: 100%;
     text-align: left;
     padding: .5rem;
 }
 
-.CourseIndex li a {
+.RegisterIndex li a {
     text-decoration: solid;
     cursor: pointer;
 } 
 
-.CourseIndex li a:hover{
+.RegisterIndex li a:hover{
     transform: scale(1.01);
 }
 
