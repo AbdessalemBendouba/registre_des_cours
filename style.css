@@ -63,7 +63,7 @@ p{
 }
 
 header{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -71,12 +71,15 @@ header{
     align-items: center;
     text-align: center;
     gap:2rem;
-    padding: 0 1rem;
     box-shadow: 0 0 1.25rem 0px black; 
     background: linear-gradient(135deg, hsl(120deg 100% 50% / 25%), hsl(207deg 100% 50% / 25%));
 }
 
+header h1, header h3, header p{
+    margin: 0 1rem;
+}
+
 .CourseIndex{
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
 }
