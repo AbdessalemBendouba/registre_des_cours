@@ -93,7 +93,7 @@ body.light{
 }
 
 body.light button{
-    color: white;
+    color: black;
 }
 
 body.light nav{
@@ -105,7 +105,7 @@ body.dark nav{
 }
 
 body.dark button{
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 body.dark{
