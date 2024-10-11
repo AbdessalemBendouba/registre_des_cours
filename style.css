@@ -82,6 +82,16 @@ header h1, header h3, header p{
 a{
     text-decoration: none;
 }
+
+h2{
+    margin-left: 5rem;
+}
+
+li{
+    margin-left: 8rem;
+}
+
+
 /* light-dark */
 
 
@@ -90,7 +100,7 @@ body.light{
     background: white;
 }
 
-body.light button, a, a:visted, a:active{
+body.light button, a, a:visited, a:active{
     color: black;
 }
 
@@ -102,7 +112,7 @@ body.dark nav{
     background: hsla(0, 0%, 13%, 0.5);
 }
 
-body.dark button, a, a:visted, a:active{
+body.dark button, a, a:visited, a:active{
     color: white;
 }
 
