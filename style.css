@@ -79,16 +79,44 @@ header h1, header h3, header p{
     min-height: 100vh;
 }
 
+.CourseIndex h1{
+    padding: 2rem 0;
+}
+
 a{
     text-decoration: none;
+}
+
+.cours{
+    background: hsla(15, 100%, 50%, 0.25);
+}
+
+.td{
+    background:hsl(210, 100%, 25%, 0.25)
 }
 
 h2{
     margin-left: 5rem;
 }
 
-li{
-    margin-left: 8rem;
+.CourseIndex ul {
+    list-style-type: none;
+    padding: 0 4rem;
+}
+
+.CourseIndex li{
+    width: 100%;
+    text-align: left;
+    padding: .5rem;
+}
+
+.CourseIndex li a {
+    text-decoration: solid;
+    cursor: pointer;
+} 
+
+.CourseIndex li a:hover{
+    transform: scale(1.01);
 }
 
 
