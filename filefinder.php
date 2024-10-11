@@ -1,5 +1,4 @@
 <?php
-
 function getPdfPaths($folderPath) {
     $pdfPaths = [];
   
@@ -19,6 +18,6 @@ $coursesPdfPaths = getPdfPaths('pdf/courses');
 $tdPdfPaths = getPdfPaths('pdf/TD');
 
 header('Content-Type: application/json');
-echo json_encode(['courses' => $coursesPdfPaths, 'TD' => $tdPdfPaths]);
-
+echo json_encode($pdfPaths);
+/*echo json_encode(['courses' => $coursesPdfPaths, 'TD' => $tdPdfPaths]);*/
 ?>
