@@ -19,16 +19,19 @@ nav{
     text-align: center;
     gap:2rem;
     padding: 0 1rem;
-    box-shadow: 0 0 20px 0px black; 
-    position: absolute;
+    box-shadow: 0 0 .25rem 0 black; 
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
+    height: 5rem;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 button{
     border: 0 ;
-    background: 0;
+    background: transparent;
 }
 
 body.light{
@@ -65,7 +68,7 @@ header{
     text-align: center;
     gap:2rem;
     padding: 0 1rem;
-    box-shadow: 0 0 20px 0px black; 
+    box-shadow: 0 0 1.25rem 0px black; 
     background: linear-gradient(135deg, hsl(120deg 100% 50% / 25%), hsl(207deg 100% 50% / 25%));
 }
 
