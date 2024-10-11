@@ -47,6 +47,7 @@ header{
     box-shadow: 0 0 20px 0px black; 
     background: linear-gradient(135deg, hsl(120deg 100% 50% / 25%), hsl(207deg 100% 50% / 25%));
 }
+
 .CourseIndex{
     width: 100vw;
     min-height: 100vh;
