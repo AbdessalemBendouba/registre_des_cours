@@ -25,12 +25,12 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap:2rem;
     padding: 0 1rem;
 }
 
-.CourseTndex{
-    
+.CourseIndex{
     width: 100vw;
     min-height: 100vh;
 }
