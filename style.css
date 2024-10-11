@@ -52,8 +52,16 @@ body.light button{
     color: white;
 }
 
+body.light nav{
+    background: hsla(0, 0%, 100%, 0.5);
+}
+
+body.dark nav{
+    background: hsla(0, 0%, 13%, 0.5);
+}
+
 body.dark button{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 body.dark{
