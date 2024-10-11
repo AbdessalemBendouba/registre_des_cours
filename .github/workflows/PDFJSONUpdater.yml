@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - 'pdf/**'
+  delete:
+    paths:
+      - 'pdf/**'
 
 jobs:
   update-pdf-paths:
