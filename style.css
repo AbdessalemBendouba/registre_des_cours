@@ -13,6 +13,7 @@
 body{
     width:100vw;
 }
+
 nav{
     width: 100%;
     display: flex;
@@ -37,13 +38,22 @@ nav button, nav span{
 }
 
 button{
-    border: 0 ;
+    border: 0;
     background: transparent;
+    cursor: pointer;
 }
 
 body.light{
     color: black;
     background: white;
+}
+
+body.light button{
+    color: white;
+}
+
+body.dark button{
+    color: white;
 }
 
 body.dark{
