@@ -34,10 +34,10 @@ function showPaths(pdfData) {
     const TList = document.getElementById('TDList');
     
     for (const folder in pdfData) {
-        for (const filePath of pdfData[folder]) {
+       const files = pdfData[folder];
+        for (const filePath of files) {
             const fileName = basename(filePath);
             const listItem = document.createElement('li');
-            
             
             const link = document.createElement('a');
             link.href = filePath;
@@ -51,7 +51,7 @@ function showPaths(pdfData) {
             } else if (folder.toLowerCase() === 'courses') {
                 listItem.className = 'pdf-link courses';
                 CList.appendChild(listItem);
-            } 
+            }
         }
     }
 }
