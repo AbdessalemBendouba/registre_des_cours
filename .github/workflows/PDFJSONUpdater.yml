@@ -18,10 +18,10 @@ jobs:
       run: |
         echo "{" > pdf_paths.json
         echo "  \"courses\": [" >> pdf_paths.json
-        find pdf/courses -name "*.pdf" -printf "%T@ %p\n" | sort -n | cut -d' ' -f2- | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> pdf_paths.json
+        find pdf/courses -name "*.pdf" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> pdf_paths.json
         echo "  ]," >> pdf_paths.json
         echo "  \"TD\": [" >> pdf_paths.json
-        find pdf/TD -name "*.pdf" -printf "%T@ %p\n" | sort -n | cut -d' ' -f2- | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> pdf_paths.json
+        find pdf/TD -name "*.pdf" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> pdf_paths.json
         echo "  ]" >> pdf_paths.json
         echo "}" >> pdf_paths.json
 
