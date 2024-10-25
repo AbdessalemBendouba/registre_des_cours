@@ -1,4 +1,4 @@
-name: Update PDF Paths
+name: Update DOC Paths
 
 on:
   push:
