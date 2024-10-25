@@ -1,26 +1,12 @@
 let body = document.querySelector("body");
-
-function setTheme(theme) {
-  body.classList.remove('light', 'dark'); // Remove both classes
-  body.classList.add(theme);
-  localStorage.setItem('theme', theme); // Store in local storage
-}
-
-// Function to toggle the theme
-function toggleTheme() {
-  const currentTheme = localStorage.getItem('theme') || 'light'; // Get current theme or default to 'light'
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-  setTheme(newTheme); // Set the new theme
-}
-
-// Function to load the theme on page load
-function loadTheme() {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else {
-    setTheme('light'); // Default to light theme if no theme is saved
-  }
+function toggletheme(){
+    if (body.classList.contains('light')) {
+        body.classList.remove('light');
+        body.classList.add('dark');
+    }else{
+        body.classList.remove('dark');
+        body.classList.add('light');
+    }
 }
 
 // pdf finder handler
@@ -58,30 +44,47 @@ function showPaths(pdfData) {
             link.href = filePath;
             link.textContent = fileName;
             link.target = '_blank';
-            
-            fetchSvgContent('./svg/pdf.svg') // Replace with the actual path
-            .then(svgContent => {
-              const svgElement = createSvgElement(svgContent);
-              listItem.appendChild(svgElement);
-            })
-            .catch(error => {
-              console.error('Error fetching SVG:', error);
-            });
-            
-            listItem.appendChild(link);
 
+            listItem.appendChild(link);
+            
             if (folder.toLowerCase() === 'td') {
-                listItem.className = 'pdf-link td';
-                TList.appendChild(listItem);
+                listItem.className = 'pdf-link td'; 
+
+                fetchSvgContent('./svg/pdf.svg') // Replace with the actual path
+                .then(svgContent => {
+                  const svgElement = createSvgElement(svgContent);
+                  listItem.appendChild(svgElement);
+                  TList.appendChild(listItem);
+                })
+                .catch(error => {
+                  console.error('Error fetching SVG:', error);
+                });
 
             } else if (folder.toLowerCase() === 'courses') {
                 listItem.className = 'pdf-link courses';
-                CList.appendChild(listItem);
+
+                fetchSvgContent('./svg/pdf.svg') // Replace with the actual path
+                .then(svgContent => {
+                  const svgElement = createSvgElement(svgContent);
+                  listItem.appendChild(svgElement);
+                  CList.appendChild(listItem);
+                })
+                .catch(error => {
+                  console.error('Error fetching SVG:', error);
+                });
 
             } else if (folder.toLowerCase() === 'tp') {
-                listItem.className = 'pdf-link tp';
-                PList.appendChild(listItem);
+                listItem.className = 'pdf-link courses';
 
+                fetchSvgContent('./svg/pdf.svg') // Replace with the actual path
+                .then(svgContent => {
+                  const svgElement = createSvgElement(svgContent);
+                  listItem.appendChild(svgElement);
+                  CList.appendChild(listItem);
+                })
+                .catch(error => {
+                  console.error('Error fetching SVG:', error);
+                });
             }
         }
     }
