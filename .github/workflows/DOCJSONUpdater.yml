@@ -18,10 +18,10 @@ jobs:
       run: |
         echo "{" > doc_paths.json
         echo "  \"courses\": [" >> doc_paths.json
-        find pdf/courses -name "*.docx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >>docf_paths.json
+        find doc/courses -name "*.docx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >>doc_paths.json
         echo "  ]," >> doc_paths.json
-        echo "  \"TD\": [" >> doc_paths.json
-        find pdf/TD -name "*.docx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> doc_paths.json
+        echo "  \"td\": [" >> doc_paths.json
+        find doc/td -name "*.docx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> doc_paths.json
         echo "  ]" >> doc_paths.json
         echo "}" >> doc_paths.json
 
