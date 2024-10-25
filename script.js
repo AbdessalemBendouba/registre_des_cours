@@ -42,7 +42,7 @@ function showPaths(pdfData) {
             const link = document.createElement('a');
             link.href = filePath;
             link.textContent = fileName;
-            
+            link.target = '_blank';
             listItem.appendChild(link);
             
             if (folder.toLowerCase() === 'td') {
