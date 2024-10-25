@@ -23,6 +23,9 @@ jobs:
         echo "  \"td\": [" >> other_files.json
         find other/td -type f ! -name "*.*" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >>other_files.json
         echo "  ]" >> other_files.json
+        echo "  \"tp\": [" >> other_files.json
+        find other/tp -type f ! -name "*.*" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >>other_files.json
+        echo "  ]" >> other_files.json
         echo "}" >> other_files.json
 
     - name: Commit changes

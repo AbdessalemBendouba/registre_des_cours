@@ -23,6 +23,9 @@ jobs:
           echo "  \"td\": [" >> img_paths.json
           find img/td -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" -o -name "*.gif" -o -name "*.bmp" -o -name "*.tiff" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> img_paths.json
           echo "  ]" >> img_paths.json
+          echo "  \"tp\": [" >> img_paths.json
+          find img/tp -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" -o -name "*.gif" -o -name "*.bmp" -o -name "*.tiff" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> img_paths.json
+          echo "  ]" >> img_paths.json
           echo "}" >> img_paths.json
 
       - name: Commit changes

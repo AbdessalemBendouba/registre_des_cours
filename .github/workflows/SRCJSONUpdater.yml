@@ -24,6 +24,9 @@ jobs:
           find src/td -name "*.cpp" -o -name "*.c" -o -name "*.py" -o -name "*.sci" -o -name "*.m" -o -name "*.ipynb" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> src_paths.json
           echo "  ]" >> src_paths.json
           echo "  \"tp\": [" >> src_paths.json
+          find src/tp -name "*.cpp" -o -name "*.c" -o -name "*.py" -o -name "*.sci" -o -name "*.m" -o -name "*.ipynb" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> src_paths.json
+          echo "  ]" >> src_paths.json
+          echo "  \"tp\": [" >> src_paths.json
           find src/td -name "*.cpp" -o -name "*.c" -o -name "*.py" -o -name "*.sci" -o -name "*.m" -o -name "*.ipynb" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> src_paths.json
           echo "  ]" >> src_paths.json
           echo "}" >> src_paths.json
