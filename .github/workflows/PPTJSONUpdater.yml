@@ -1,0 +1,34 @@
+name: Update PPT Paths
+
+on:
+  push:
+    paths:
+      - 'ppt/**'
+  delete:
+    paths:
+      - 'ppt/**'
+
+jobs:
+  update-pdf-paths:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Find PPT files
+      run: |
+        echo "{" > ppt_paths.json
+        echo "  \"courses\": [" >> ppt_paths.json
+        find ppt/courses -name "*.pptx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >>ppt_paths.json
+        echo "  ]," >> ppt_paths.json
+        echo "  \"td\": [" >> ppt_paths.json
+        find ppt/td -name "*.pptx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> ppt_paths.json
+        echo "  ]" >> ppt_paths.json
+        echo "}" >> ppt_paths.json
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add ppt_paths.json
+        git commit -m "Update PPT paths (sorted chronologically)" || echo "No changes to commit"
+        git push

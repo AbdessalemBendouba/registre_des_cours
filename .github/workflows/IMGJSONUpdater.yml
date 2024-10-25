@@ -1,0 +1,34 @@
+name: Update IMG Paths
+
+on:
+  push:
+    paths:
+      - 'img/**'
+  delete:
+    paths:
+      - 'img/**'
+
+jobs:
+  update-pdf-paths:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Find IMG files (various formats)
+        run: |
+          echo "{" > img_paths.json
+          echo " C\"courses\": [" >> img_paths.json
+          find img/courses -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" -o -name "*.gif" -o -name "*.bmp" -o -name "*.tiff" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >>img_paths.json
+          echo "  ]," >> img_paths.json
+          echo "  \"td\": [" >> img_paths.json
+          find img/td -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" -o -name "*.gif" -o -name "*.bmp" -o -name "*.tiff" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> img_paths.json
+          echo "  ]" >> img_paths.json
+          echo "}" >> img_paths.json
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add img_paths.json
+          git commit -m "Update IMG paths (sorted chronologically)" || echo "No changes to commit"
+          git push

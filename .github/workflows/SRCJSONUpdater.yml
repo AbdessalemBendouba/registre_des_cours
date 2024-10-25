@@ -1,0 +1,37 @@
+name: Update SRC Paths
+
+on:
+  push:
+    paths:
+      - 'src/**'
+  delete:
+    paths:
+      - 'src/**'
+
+jobs:
+  update-pdf-paths:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Find SRC files (various formats)
+        run: |
+          echo "{" > src_paths.json
+          echo " C\"courses\": [" >> src_paths.json
+          find src/courses -name "*.cpp" -o -name "*.c" -o -name "*.py" -o -name "*.sci" -o -name "*.m" -o -name "*.ipynb" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >>src_paths.json
+          echo "  ]," >> src_paths.json
+          echo "  \"td\": [" >> src_paths.json
+          find src/td -name "*.cpp" -o -name "*.c" -o -name "*.py" -o -name "*.sci" -o -name "*.m" -o -name "*.ipynb" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> src_paths.json
+          echo "  ]" >> src_paths.json
+          echo "  \"tp\": [" >> src_paths.json
+          find src/td -name "*.cpp" -o -name "*.c" -o -name "*.py" -o -name "*.sci" -o -name "*.m" -o -name "*.ipynb" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> src_paths.json
+          echo "  ]" >> src_paths.json
+          echo "}" >> src_paths.json
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src_paths.json
+          git commit -m "Update SRC paths (sorted chronologically)" || echo "No changes to commit"
+          git push
