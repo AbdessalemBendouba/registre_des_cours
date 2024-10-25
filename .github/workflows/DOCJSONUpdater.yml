@@ -3,10 +3,10 @@ name: Update PDF Paths
 on:
   push:
     paths:
-      - 'pdf/**'
+      - 'doc/**'
   delete:
     paths:
-      - 'pdf/**'
+      - 'doc/**'
 
 jobs:
   update-pdf-paths:
@@ -14,21 +14,21 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Find PDF files
+    - name: Find DOC files
       run: |
-        echo "{" > pdf_paths.json
-        echo "  \"courses\": [" >> pdf_paths.json
-        find pdf/courses -name "*.pdf" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> pdf_paths.json
-        echo "  ]," >> pdf_paths.json
-        echo "  \"TD\": [" >> pdf_paths.json
-        find pdf/TD -name "*.pdf" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> pdf_paths.json
-        echo "  ]" >> pdf_paths.json
-        echo "}" >> pdf_paths.json
+        echo "{" > doc_paths.json
+        echo "  \"courses\": [" >> doc_paths.json
+        find pdf/courses -name "*.docx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >>docf_paths.json
+        echo "  ]," >> doc_paths.json
+        echo "  \"TD\": [" >> doc_paths.json
+        find pdf/TD -name "*.docx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> doc_paths.json
+        echo "  ]" >> doc_paths.json
+        echo "}" >> doc_paths.json
 
     - name: Commit changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add pdf_paths.json
-        git commit -m "Update PDF paths (sorted chronologically)" || echo "No changes to commit"
+        git add doc_paths.json
+        git commit -m "Update DOC paths (sorted chronologically)" || echo "No changes to commit"
         git push
