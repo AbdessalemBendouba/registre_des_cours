@@ -7,48 +7,17 @@
    viewBox="0 0 39.422882 45.772854"
    version="1.1"
    id="svg5"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
-     showgrid="true">
-    <inkscape:grid
-       type="xygrid"
-       id="grid132" />
-  </sodipodi:namedview>
   <defs
      id="defs2" />
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-21.563538,-202.53855)">
     <path
-       sodipodi:type="star"
        style="fill:none;stroke:#000000;stroke-width:1.19448;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:20;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        id="path1323"
-       inkscape:flatsided="true"
-       sodipodi:sides="3"
-       sodipodi:cx="58.737499"
-       sodipodi:cy="31.75"
-       sodipodi:r1="12.798834"
-       sodipodi:r2="6.3994169"
-       sodipodi:arg1="0.52359878"
-       sodipodi:arg2="1.5707963"
-       inkscape:rounded="-0.31380269"
-       inkscape:randomized="0"
        d="m 69.821614,38.149417 c 3.478226,-6.024463 -25.646455,-6.024463 -22.16823,0 3.478225,6.024463 18.040566,-19.198251 11.084115,-19.198251 -6.95645,0 7.60589,25.222714 11.084115,19.198251 z"
-       inkscape:transform-center-y="-3.0286009"
        transform="matrix(1.1074253,0,0,1.1074253,-23.772393,196.47073)" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1.32292;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:20;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"

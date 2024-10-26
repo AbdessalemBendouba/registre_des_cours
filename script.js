@@ -45,46 +45,30 @@ function showPaths(pdfData) {
             link.textContent = fileName;
             link.target = '_blank';
 
+            fetchSvgContent('./svg/pdf.svg') // Replace with the actual path
+            .then(svgContent => {
+              const svgElement = createSvgElement(svgContent);
+              listItem.appendChild(svgElement);
+            })
+            .catch(error => {
+              console.error('Error fetching SVG:', error);
+            });
+
+
             listItem.appendChild(link);
             
             if (folder.toLowerCase() === 'td') {
                 listItem.className = 'pdf-link td'; 
-
-                fetchSvgContent('./svg/pdf.svg') // Replace with the actual path
-                .then(svgContent => {
-                  const svgElement = createSvgElement(svgContent);
-                  listItem.appendChild(svgElement);
-                  TList.appendChild(listItem);
-                })
-                .catch(error => {
-                  console.error('Error fetching SVG:', error);
-                });
-
+                TList.appendChild(listItem);
+                
             } else if (folder.toLowerCase() === 'courses') {
                 listItem.className = 'pdf-link courses';
-
-                fetchSvgContent('./svg/pdf.svg') // Replace with the actual path
-                .then(svgContent => {
-                  const svgElement = createSvgElement(svgContent);
-                  listItem.appendChild(svgElement);
-                  CList.appendChild(listItem);
-                })
-                .catch(error => {
-                  console.error('Error fetching SVG:', error);
-                });
+                CList.appendChild(listItem);
 
             } else if (folder.toLowerCase() === 'tp') {
                 listItem.className = 'pdf-link courses';
+                PList.appendChild(listItem);
 
-                fetchSvgContent('./svg/pdf.svg') // Replace with the actual path
-                .then(svgContent => {
-                  const svgElement = createSvgElement(svgContent);
-                  listItem.appendChild(svgElement);
-                  CList.appendChild(listItem);
-                })
-                .catch(error => {
-                  console.error('Error fetching SVG:', error);
-                });
             }
         }
     }
