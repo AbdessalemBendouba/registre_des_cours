@@ -164,7 +164,7 @@ svg path{
     position: relative;
 }
 
-.Loading{
+.loading{
     height: 100%;
     width: 100%;
     position: absolute;
@@ -172,7 +172,7 @@ svg path{
     top: 0;
     align-content: center;
 }
-.Loading.invisible{
+.loading.invisible{
     display: none;
 }
 
@@ -184,7 +184,7 @@ body.light{
     background: white;
 }
 
-body.light .Loading{
+body.light .loading{
     background: white;
 }
 
@@ -217,7 +217,7 @@ body.dark{
     background: #202020;
 }
 
-body.dark .Loading{
+body.dark .loading{
     background: #202020;
 }
 
