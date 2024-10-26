@@ -26,7 +26,7 @@ async function fetchJsonFile(filePath) { //fetch json file function
 }
 
 async function getFilePaths() {
-    const fileTypes = ['pdf', 'doc', 'img', 'other', 'ppt', 'src', 'xls']; // Add other file types as needed
+    const fileTypes = ['pdf', 'doc', 'img', 'other', 'ppt', 'src', 'xls'];  // Add other file types as needed
     const fileData = {};
 
     const fetchPromises = fileTypes.map(fileType => 
@@ -143,6 +143,7 @@ function showPaths(fileData) {
             }
         });
     }
+    document.querySelector('.Loading').classList.add('invisible');
 }
   
 // Call the functions and showing elements

@@ -159,11 +159,31 @@ svg path{
     paint-order: stroke markers fill;
 }
 
+.container{
+    position: relative;
+}
+
+.Loading{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    align-content: center;
+}
+.Loading.invisible{
+    display: none;
+}
+
 /* light-dark */
 
 
 body.light{
     color: black;
+    background: white;
+}
+
+body.light .Loading{
     background: white;
 }
 
@@ -193,6 +213,10 @@ body.dark button, body.dark a, body.dark a:visited, body.dark a:active{
 
 body.dark{
     color: white;
+    background: #202020;
+}
+
+body.dark .Loading{
     background: #202020;
 }
 
