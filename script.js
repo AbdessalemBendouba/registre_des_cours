@@ -1,5 +1,14 @@
 let body = document.body;
 
+const storedTheme = localStorage.getItem('theme');
+    
+//if a theme is stored in local storage add it to the body, else, default to light theme if no theme is found
+if (storedTheme) {
+    setTheme(storedTheme);
+} else if(!document.body.classList.contains('dark')) {
+    setTheme('light')
+}
+
 function setTheme(theme) {
     document.body.classList.remove('light', 'dark'); // Remove both classes to ensure only one is active
     document.body.classList.add(theme);
@@ -174,11 +183,3 @@ getFilePaths()
 });
 
 
-const storedTheme = localStorage.getItem('theme');
-    
-//if a theme is stored in local storage add it to the body, else, default to light theme if no theme is found
-if (storedTheme) {
-    setTheme(storedTheme);
-}else if(!document.body.classList.contains('dark')){
-    setTheme('light')
-}
