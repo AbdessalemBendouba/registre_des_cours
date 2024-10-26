@@ -143,7 +143,7 @@ function showPaths(fileData) {
             }
         });
     }
-    document.querySelector('.Loading').classList.add('invisible');
+    document.querySelector('.loading').classList.add('invisible');
 }
 
 // Call the functions and showing elements
