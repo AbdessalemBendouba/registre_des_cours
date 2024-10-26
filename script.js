@@ -172,6 +172,8 @@ getFilePaths()
     console.error('Error fetching PDF data:', error); 
     document.querySelector('.loading').innerHTML="<h1 style='font-size:17rem;'>⚠️</h1><h1> un erruer de prendre des donnée ! </h1> <h2 style='margin: auto; width:fit-content;'> veuillez recharger la page après une minute</h2>"
 });
+
+
 const storedTheme = localStorage.getItem('theme');
     
 //if a theme is stored in local storage add it to the body, else, default to light theme if no theme is found
