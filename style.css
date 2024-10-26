@@ -117,6 +117,8 @@ h2{
 
 .RegisterIndex li{
     width: fit-content;
+    display: flex;
+    gap: 1rem;
     text-align: left;
     padding: .5rem;
 }
@@ -125,6 +127,11 @@ h2{
     text-decoration: solid;
     cursor: pointer;
 } 
+
+.RegisterIndex svg{
+    height: 4rem;
+    width: auto;
+}
 
 .pdf-link:hover{
     transform: scale(1.1);
