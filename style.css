@@ -133,7 +133,7 @@ h2{
     width: auto;
 }
 
-.pdf-link:hover{
+.file-link:hover{
     transform: scale(1.1);
 }
 
@@ -150,6 +150,14 @@ h2{
 body.light{
     color: black;
     background: white;
+}
+
+body.dark svg path{
+    stroke: white;
+}
+
+body.light svg path{
+    stroke: black;
 }
 
 body.light button, body.light a, body.light a:visited, body.light a:active{

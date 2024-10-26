@@ -1,13 +1,17 @@
-let body = document.querySelector("body");
-function toggletheme(){
-    if (body.classList.contains('light')) {
-        body.classList.remove('light');
-        body.classList.add('dark');
-    }else{
-        body.classList.remove('dark');
-        body.classList.add('light');
-    }
+let body = document.body;
+
+function setTheme(theme) {
+    document.body.classList.remove('light', 'dark'); // Remove both classes to ensure only one is active
+    document.body.classList.add(theme);
+    localStorage.setItem('theme', theme); // Store the theme in local storage
 }
+
+function toggleTheme() {
+    const currentTheme = localStorage.getItem('theme'); //get theme from localStorage if it exists, otherwise get the theme from body if a theme class exists
+    const newTheme = (currentTheme === 'dark' || (!currentTheme && body.classList.contains('dark')) ) ? 'light' : 'dark';
+    setTheme(newTheme);
+}
+
 
 // file finder handler
 
@@ -129,9 +133,19 @@ function fetchSvgContent(svgPath) {
 }
 
 getFilePaths()
-    .then(fileData => {
-        showPaths(fileData);
-    })
-    .catch(error => {
-        console.error('Error fetching PDF data:', error);
-    });
+.then(fileData => {
+    showPaths(fileData);
+}).catch(error => {
+    console.error('Error fetching PDF data:', error);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const storedTheme = localStorage.getItem('theme');
+    
+    //if a theme is stored in local storage add it to the body, else, default to light theme if no theme is found
+    if (storedTheme) {
+        setTheme(storedTheme);
+    }else if(!document.body.classList.contains('dark')){
+        setTheme('light')
+    }
+});
