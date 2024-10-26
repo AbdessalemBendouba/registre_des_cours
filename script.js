@@ -167,8 +167,10 @@ function fetchSvgContent(svgPath) {
 getFilePaths()
 .then(fileData => {
     showPaths(fileData);
+    document.querySelector('.loading').classList.add('invisible');
 }).catch(error => {
-    console.error('Error fetching PDF data:', error);
+    console.error('Error fetching PDF data:', error); 
+    document.querySelector('.loading').innerHTML="<h1 style='font-size:17rem;'>⚠️</h1><h1> un erruer de prendre des donnée ! </h1> <h2 style='margin: auto; width:fit-content;'> veuillez recharger la page après une minute</h2>"
 });
 
 document.addEventListener('DOMContentLoaded', () => {

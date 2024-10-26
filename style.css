@@ -185,7 +185,7 @@ body.light{
 }
 
 body.light .loading{
-    background: white;
+    background: #ddd;
 }
 
 body.dark svg path{
