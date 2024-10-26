@@ -145,7 +145,7 @@ function showPaths(fileData) {
     }
     document.querySelector('.Loading').classList.add('invisible');
 }
-  
+
 // Call the functions and showing elements
 
 function createSvgElement(svgCode) {

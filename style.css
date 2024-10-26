@@ -82,6 +82,7 @@ header h1, header h3, header p{
 h1{
     padding: 2rem 0;
     width: fit-content;
+    margin: auto;
 }
 
 a{
