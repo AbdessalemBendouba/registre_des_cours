@@ -68,9 +68,10 @@ function showPaths(fileData) {
     const CList = document.getElementById('CoursesList');
     const TList = document.getElementById('TDList');
     const PList = document.getElementById('TPList');
-    
+    console.log(fileData);
     for (const folder in fileData) {
         const files = fileData[folder];
+        console.log(files);
         for (const filePath of files) {
             const fileName = basename(filePath);
             const fileType = getFileType(fileName); // Get the file type
