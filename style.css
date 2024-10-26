@@ -96,6 +96,10 @@ a{
     background:hsl(210, 100%, 25%, 0.25)
 }
 
+.TPIndex{
+    background:hsl(120, 100%, 13%, 0.25)
+}
+
 h2{
     margin-bottom: 1rem;
 }

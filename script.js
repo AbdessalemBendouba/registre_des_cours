@@ -117,16 +117,16 @@ function showPaths(fileData) {
 // Call the functions and showing elements
 
 function createSvgElement(svgCode) {
-    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svgElement.innerHTML = svgCode;
-    return svgElement;
+    const parser = new DOMParser();
+    const svgDoc = parser.parseFromString(svgCode, 'image/svg+xml');
+    return svgDoc.documentElement; // Directly return the <svg> element from the parsed SVG
 }
 
 function fetchSvgContent(svgPath) {
   return fetch(svgPath)
     .then(response => {
       if (!response.ok) {
-        throw new Error('Failed to fetch SVG');
+        throw new Error(`Failed to fetch SVG from ${svgPath}`);
       }
       return response.text();
     });
