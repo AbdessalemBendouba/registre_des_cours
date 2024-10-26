@@ -96,15 +96,15 @@ function showPaths(fileData) {
                     
                                         
                         if (folder.toLowerCase() === 'td') {
-                            listItem.className = 'pdf-link td'; 
+                            listItem.className = 'file-link td'; 
                             TList.appendChild(listItem);
                         
                         } else if (folder.toLowerCase() === 'courses') {
-                            listItem.className = 'pdf-link courses';
+                            listItem.className = 'file-link courses';
                             CList.appendChild(listItem);
                         
                         } else if (folder.toLowerCase() === 'tp') {
-                            listItem.className = 'pdf-link tp';
+                            listItem.className = 'file-link tp';
                             PList.appendChild(listItem);
                         
                         }
