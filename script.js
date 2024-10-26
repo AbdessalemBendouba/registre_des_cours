@@ -49,13 +49,14 @@ function showPaths(pdfData) {
             .then(svgContent => {
               const svgElement = createSvgElement(svgContent);
               listItem.appendChild(svgElement);
+              listItem.appendChild(link);
             })
             .catch(error => {
               console.error('Error fetching SVG:', error);
+              listItem.appendChild(link);
             });
 
 
-            listItem.appendChild(link);
             
             if (folder.toLowerCase() === 'td') {
                 listItem.className = 'pdf-link td'; 
@@ -66,7 +67,7 @@ function showPaths(pdfData) {
                 CList.appendChild(listItem);
 
             } else if (folder.toLowerCase() === 'tp') {
-                listItem.className = 'pdf-link courses';
+                listItem.className = 'pdf-link tp';
                 PList.appendChild(listItem);
 
             }
