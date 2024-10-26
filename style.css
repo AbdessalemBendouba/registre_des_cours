@@ -6,7 +6,7 @@
 	text-decoration: none;
 	border: none;
 	outline: none;
-	scroll-behavior: smooth;
+	scroll-behavior: smooth; 
 	transition: all .25s;
 }
 
@@ -171,6 +171,7 @@ svg path{
     z-index: 5;
     top: 0;
     align-content: center;
+    box-shadow: 0 0 1.25rem 0px black; 
 }
 .loading.invisible{
     display: none;
