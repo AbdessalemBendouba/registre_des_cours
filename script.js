@@ -69,49 +69,79 @@ function showPaths(fileData) {
     const TList = document.getElementById('TDList');
     const PList = document.getElementById('TPList');
     console.log(fileData);
-    for (const folder in fileData) {
-        const files = fileData[folder];
-        console.log(files);
-        for (const filePath of files) {
-            const fileName = basename(filePath);
-            const fileType = getFileType(fileName); // Get the file type
-            const listItem = document.createElement('li');
-            const link = document.createElement('a');
-            
-            link.href = filePath;
-            link.textContent = fileName;
-            link.target = '_blank';
 
-            const svgTargetPath = `./svg/${fileType}.svg`;
+    for (const fileType in fileData) {
+        const folders = fileData[fileType]; //get the object containing folders
+        const svgTargetPath = `./svg/${fileType}.svg`; //determine the target path, can't be done inside the inner loop as folder names do not map to file types directly, unlike filetypes themselves
+        fetchSvgContent(svgTargetPath)
+        .then(svgContent => {  //fetch the svg corresponding to the current filetype, this assumes each folder contains at most one file of each filetype
+            for (const folder in folders) { //iterate over the folders in the object: courses, td, tp ...
+                const files = folders[folder]; 
+                console.log(files);
+                if (Array.isArray(files) && files.length > 0){
 
-            fetchSvgContent(svgTargetPath) // Dynamic SVG path based on file type
-
-            .then(svgContent => {
-              const svgElement = createSvgElement(svgContent);
-              listItem.appendChild(svgElement);
-              listItem.appendChild(link);
-            })
-            .catch(error => {
-              console.error('Error fetching SVG:', error);
-              listItem.appendChild(link);
-            });
-
-
-            
-            if (folder.toLowerCase() === 'td') {
-                listItem.className = 'pdf-link td'; 
-                TList.appendChild(listItem);
+                    for (const filePath of files) {
+                        const fileName = basename(filePath);
+                        const listItem = document.createElement('li');
+                        const link = document.createElement('a');
+                    
+                        link.href = filePath;
+                        link.textContent = fileName;
+                        link.target = '_blank';
+                    
+                    
+                        const svgElement = createSvgElement(svgContent); 
+                        listItem.appendChild(svgElement);  //add icon and link
+                        listItem.appendChild(link);
+                    
+                                        
+                        if (folder.toLowerCase() === 'td') {
+                            listItem.className = 'pdf-link td'; 
+                            TList.appendChild(listItem);
+                        
+                        } else if (folder.toLowerCase() === 'courses') {
+                            listItem.className = 'pdf-link courses';
+                            CList.appendChild(listItem);
+                        
+                        } else if (folder.toLowerCase() === 'tp') {
+                            listItem.className = 'pdf-link tp';
+                            PList.appendChild(listItem);
+                        
+                        }
+                    }
                 
-            } else if (folder.toLowerCase() === 'courses') {
-                listItem.className = 'pdf-link courses';
-                CList.appendChild(listItem);
-
-            } else if (folder.toLowerCase() === 'tp') {
-                listItem.className = 'pdf-link tp';
-                PList.appendChild(listItem);
-
+                } else if (Array.isArray(files)){
+                    console.warn(`No files found for folder: ${folder}`); // A warning message in case there are no files in a given folder so it does not cause confusion as to why files in a folder are not being shown
+                } else {
+                    console.error(`Invalid data for folder: ${folder}. Expected an array, got ${typeof files}:`, files); // Log an error
+                }
             }
-        }
+        }).catch(error => {
+            console.error(`Error fetching SVG for ${fileType} or processing files:`, error);
+            for (const folder in folders) {
+                const files = folders[folder];
+                const fileName = Array.isArray(files) && files.length > 0 ? basename(files[0]) : "";
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = Array.isArray(files) && files.length > 0 ? files[0] : "";
+                link.textContent = fileName;
+                link.target = '_blank';
+                listItem.appendChild(link);
+                if (folder.toLowerCase() === 'td') {
+                    listItem.className = 'file-link td'; 
+                    TList.appendChild(listItem);
+
+                } else if (folder.toLowerCase() === 'courses') {
+                    listItem.className = 'file-link courses';
+                    CList.appendChild(listItem);
+
+                } else if (folder.toLowerCase() === 'tp') {
+                    listItem.className = 'file-link tp';
+                    PList.appendChild(listItem);
+
+                }
+            }
+        });
     }
 }
   
