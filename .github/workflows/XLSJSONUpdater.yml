@@ -22,7 +22,7 @@ jobs:
         echo "  ]," >> xls_paths.json
         echo "  \"td\": [" >> xls_paths.json
         find xls/td -name "*.xlsx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> xls_paths.json
-        echo "  ]" >> xls_paths.json
+        echo "  ]," >> xls_paths.json
         echo "  \"tp\": [" >> xls_paths.json
         find xls/tp -name "*.xlsx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> xls_paths.json
         echo "  ]" >> xls_paths.json

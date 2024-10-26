@@ -22,7 +22,7 @@ jobs:
         echo "  ]," >> pdf_paths.json
         echo "  \"TD\": [" >> pdf_paths.json
         find pdf/TD -name "*.pdf" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> pdf_paths.json
-        echo "  ]" >> pdf_paths.json
+        echo "  ]," >> pdf_paths.json
         echo "  \"TP\": [" >> pdf_paths.json
         find pdf/TP -name "*.pdf" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> pdf_paths.json
         echo "  ]" >> pdf_paths.json

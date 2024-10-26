@@ -22,7 +22,7 @@ jobs:
         echo "  ]," >> ppt_paths.json
         echo "  \"td\": [" >> ppt_paths.json
         find ppt/td -name "*.pptx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> ppt_paths.json
-        echo "  ]" >> ppt_paths.json
+        echo "  ]," >> ppt_paths.json
         echo "  \"tp\": [" >> ppt_paths.json
         find ppt/tp -name "*.pptx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> ppt_paths.json
         echo "  ]" >> ppt_paths.json

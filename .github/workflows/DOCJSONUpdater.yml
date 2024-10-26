@@ -22,7 +22,7 @@ jobs:
         echo "  ]," >> doc_paths.json
         echo "  \"td\": [" >> doc_paths.json
         find doc/td -name "*.docx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> doc_paths.json
-        echo "  ]" >> doc_paths.json
+        echo "  ]," >> doc_paths.json
         echo "  \"tp\": [" >> doc_paths.json
         find doc/tp -name "*.docx" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >> doc_paths.json
         echo "  ]" >> doc_paths.json
