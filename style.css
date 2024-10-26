@@ -148,6 +148,17 @@ h2{
     width: calc(100% - 2rem);
 }
 
+svg path{
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 20;
+    stroke-dasharray: none;
+    stroke-opacity: 1;
+    paint-order: stroke markers fill;
+}
+
 /* light-dark */
 
 
