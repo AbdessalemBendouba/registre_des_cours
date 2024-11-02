@@ -149,7 +149,7 @@ h2{
     width: calc(100% - 2rem);
 }
 
-svg path{
+svg path, svg circle{
     fill: none;
     stroke-width: 2;
     stroke-linecap: round;
@@ -189,11 +189,11 @@ body.light .loading{
     background: #ddd;
 }
 
-body.dark svg path{
+body.dark svg path, body.dark svg circle{
     stroke: white;
 }
 
-body.light svg path{
+body.light svg path, body.light svg circle{
     stroke: black;
 }
 
