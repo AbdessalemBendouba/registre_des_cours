@@ -17,7 +17,7 @@ jobs:
       - name: Find IMG files (various formats)
         run: |
           echo "{" > img_paths.json
-          echo " C\"courses\": [" >> img_paths.json
+          echo " \"courses\": [" >> img_paths.json
           find img/courses -name "*.jpeg" -o -name "*.jpg" -o -name "*.png" -o -name "*.gif" -o -name "*.bmp" -o -name "*.tiff" | sort | sed 's/^/    "/' | sed 's/$/",/' | sed '$s/,$//' >>img_paths.json
           echo "  ]," >> img_paths.json
           echo "  \"td\": [" >> img_paths.json
